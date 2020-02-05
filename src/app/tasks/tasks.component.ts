@@ -7,8 +7,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TasksComponent implements OnInit {
 
-  constructor() { }
+  private taskNames = ['first Contact',
+  'telephone Contact',
+  'ticket Creation',
+  'ticket Payment'
+];
+public taskName;
+  constructor() {
+    this.taskName = this.taskNames[0];
+   }
+   public disablePlaceSection() {
+     return this.taskName !== 'ticket Creation';
 
+   }
+   public disableTransportSection() {
+    return this.taskName !== 'ticket Creation';
+  }
+  public disablePartySection() {
+    return this.taskName === 'ticket Creation';
+  }
   ngOnInit() {
   }
 

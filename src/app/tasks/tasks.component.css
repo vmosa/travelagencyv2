@@ -1,0 +1,7 @@
+:target {
+    color: AD8888
+}
+:last-child ::after {
+    content: normal;
+    content: "Section end"
+}

@@ -14,10 +14,10 @@ const routes: Routes = [{
   path: 'login', component: LoginComponent
 },
 {
-  path: 'tasks', component: TasksComponent,
+  path: 'tasks', component: TasksComponent /*,
   canLoad: [AuthguardGuard],
   canActivate: [AuthguardGuard],
-  runGuardsAndResolvers: 'always'
+  runGuardsAndResolvers: 'always'*/
 
 },
 {path: '', component: AppComponent}];
