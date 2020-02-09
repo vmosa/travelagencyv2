@@ -1,1 +1,15 @@
-<p>admin-payments works!</p>
+<form [formGroup]="searchForm">
+    <label>Search by payment id<input type="text" formControlName="paymentId"/></label><br>
+    <input type="submit" value="Search"/> <input type="reset" value="Cancel" />
+</form>
+<hr>
+<form [formGroup]="paymentForm">
+    <label>Id: <input formControlName="id"/>{{Id}}</label><br>
+    <div formGroupName="customer"> Customer info:<br> 
+        <label>Customer Id: <input formControlName="customerId"/>{{customerId}}</label><br>
+        <label>Name: <input formControlName="customerName"/>{{customerName}}</label><br>
+        <label>Surname: <input formControlName="customerSurname"/>{{customerSurname}}</label><br>
+    </div>
+    <label>Form of Payment: <input formControlName="paymentType"/>{{paymentType}}</label><br>
+    <label>Id: <input formControlName="paymentDate"/>{{paymentDate}}</label>
+</form>
