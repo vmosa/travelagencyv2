@@ -1,1 +1,11 @@
-<p>admin-add-destination works!</p>
+<form [formGroup]="destinationForm" (reset)="checkContinent=false" (submit)="onSubmit()">
+    <label>City: <input type="text" formControlName="city" required/></label>
+    <div formGroupName="countryForm">
+        <select formControlName="country" (change)="onChange()" required>Country: 
+            <option *ngFor="let country of countries">{{country.country}}</option>
+        </select>
+        <label *ngIf="checkContinent">Continent: <input type="text" formControlName="continent" required/></label>
+    </div>
+    <input type="submit" value="add destination" ><input type="reset" value="cancel" >
+
+</form>
