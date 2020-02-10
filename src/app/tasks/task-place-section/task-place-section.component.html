@@ -1,1 +1,9 @@
-<p>task-place-section works!</p>
+<form [formGroup]="destinationsForm">
+    <app-destination></app-destination>
+    <app-destination></app-destination>    
+    <label><input type="checkbox" formControlName="returnTripFlag" id="returnTripFlag"/>Round trip</label>
+    <div *ngIf="this.destinationsForm.get('returnTripFlag').checked"> 
+        <app-destination></app-destination>
+        <app-destination></app-destination>
+    </div>
+    </form>

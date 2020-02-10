@@ -1,0 +1,10 @@
+<div [formGroup]="destinationForm">
+<br>
+    <label>City: <input formControlName="citySearchTerm" (change)="searchDestinationByCity(this.destinationForm.get('citySearchTerm').value)"/> 
+        <select formControlName="city" >
+            <!--  option list created from search-->
+            <option *ngFor="let city of cities" [ngValue]="city">{{city.city}}</option>
+        </select></label>
+    <label>Country: <input formControlName="country" value="country"/></label><br>
+    <label>Date: <input type="date" formControlName="date"> </label>
+    </div>
