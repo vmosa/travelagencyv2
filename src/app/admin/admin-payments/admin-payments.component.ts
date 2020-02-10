@@ -27,7 +27,7 @@ export class AdminPaymentsComponent implements OnInit {
     });
   }
   onSubmitSearch(paymentId) {
-
+    
   }
   updatePayment(payment) {
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, FormsModule, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-task-party-section',
@@ -6,10 +7,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./task-party-section.component.css']
 })
 export class TaskPartySectionComponent implements OnInit {
-
-  constructor() { }
+  customerForm: FormGroup;
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
+    this.customerForm = this.fb.group({
+      name: '',
+      surname: '',
+      idDocumentForm: this.fb.group({
+        idDocumentType: '',
+        idDocumentNumber: ''
+      }),
+      addressForm: this.fb.group({
+        addressStreetName: '',
+        addressStreetNumber: '',
+        addressPOBox: '',
+        addressCity: '',
+        addressCountry: '',
+        addressType: ''
+      })
+
+    });
   }
 
 }

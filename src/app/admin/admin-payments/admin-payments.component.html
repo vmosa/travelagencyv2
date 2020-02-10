@@ -3,7 +3,7 @@
     <input type="submit" value="Search"/> <input type="reset" value="Cancel" />
 </form>
 <hr>
-<form [formGroup]="paymentForm">
+<form [formGroup]="paymentForm" >
     <label>Id: <input formControlName="id"/>{{Id}}</label><br>
     <div formGroupName="customer"> Customer info:<br> 
         <label>Customer Id: <input formControlName="customerId"/>{{customerId}}</label><br>
@@ -11,5 +11,6 @@
         <label>Surname: <input formControlName="customerSurname"/>{{customerSurname}}</label><br>
     </div>
     <label>Form of Payment: <input formControlName="paymentType"/>{{paymentType}}</label><br>
-    <label>Id: <input formControlName="paymentDate"/>{{paymentDate}}</label>
+    <label>Date of payment: <input formControlName="paymentDate"/>{{paymentDate}}</label><br>
+    <input type="submit" value="Update Payment"/> <input type="reset" value="Cancel" />
 </form>

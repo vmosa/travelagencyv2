@@ -1,1 +1,20 @@
-<p>task-party-section works!</p>
+<form [formGroup]="customerForm">
+    <label>Name: <input type="text" formControlName="name"/></label>
+    <label>Surname: <input type="text" formControlName="surname"/></label><br>
+    <form formGroupName="idDocumentForm">Identification Document: <br>
+        <label>Type: <input type="text" formControlName="idDocumentType"/></label>
+        <label>Number: <input type="text" formControlName="idDocumentNumber"/></label><br>
+    </form>
+    <form formGroupName="addressForm"> Address: <br>
+        <label>Type: <input type="text" formControlName="addressType"/></label>
+        <div>Street Address: <br>
+            <label>Street Name:<input type="text" formControlName="addressStreetName"/></label>
+            <label>Number:<input formControlName="addressStreetNumber"/></label>
+            <br>
+            <label>PO BOX:<input type="text" formControlName="addressPOBox"/></label>
+            <label>City: <input formControlName="addressCity"/></label>
+            <label>Country: <input formControlName="addressCountry"/></label>
+            <br></div>
+    </form>
+
+</form>
