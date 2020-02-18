@@ -20,7 +20,7 @@ import { TasksModule } from './tasks/tasks.module';
     LoginModule,
     AdminModule,
     TasksModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

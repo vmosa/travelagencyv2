@@ -6,6 +6,9 @@ import { TaskPlaceSectionComponent } from '../tasks/task-place-section/task-plac
 import { TaskTransportSectionComponent } from '../tasks/task-transport-section/task-transport-section.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DestinationComponent } from './destination/destination.component';
+import { TasklistComponent } from './tasklist/tasklist.component';
+import { TaskmainComponent } from './taskmain/taskmain.component';
+import { TasksRoutingModule } from './tasks-routing.module';
 
 
 
@@ -15,11 +18,14 @@ import { DestinationComponent } from './destination/destination.component';
     TaskPartySectionComponent,
     TaskPlaceSectionComponent,
     TaskTransportSectionComponent,
-    DestinationComponent],
+    DestinationComponent,
+    TasklistComponent,
+    TaskmainComponent],
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TasksRoutingModule
   ],
   exports: [TasksComponent],
   entryComponents: [TasksComponent]

@@ -6,5 +6,5 @@ import { EnumsService } from './enums.service';
 })
 export class PaymentService {
 
-  constructor() { }
+  constructor(private enums: EnumsService) { }
 }

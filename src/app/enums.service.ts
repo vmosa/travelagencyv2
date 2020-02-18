@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Address, Country, Customer, Destination, Payment } from './helperclasses/helperclasses.module';
 
 @Injectable({
   providedIn: 'root'
@@ -14,26 +15,24 @@ private listOfDestinations = [
 }, { id: 2, city: 'Rome', country: {country: 'Italy', code: 'ITA', continent: 'Europe'}
   }
 ];
-private listOfPayments = [{
-  id: 1, customerId: 1, paymentType: 'Cash', paymentDate: new Date('2019-03-25')
-}, {
-  id: 2, customerId: 1, paymentType: 'CreditCard', paymentDate: new Date('2019-04-01')
-}, {
-  id: 3, customerId: 2, paymentType: 'DebitCard', paymentDate: new Date('2020-01-20')
-}];
+private listOfPayments = [
+  new Payment(1, 1, 'Cash', new Date('2019-03-25'), 50.5),
+  new Payment(2, 1, 'CreditCard', new Date('2019-04-01'), 1500),
+  new Payment(3, 2, 'DebitCard', new Date('2020-01-20'), 0)
+  ];
 
 private listOfCustomers = [
   {
-    id: 1, name: 'John', surname: 'Doe', addressId: 1
+    id: 1, name: 'John', surname: 'Doe', addressId: 1, dateOfBirth: new Date('2006-03-08')
   }, {
-    id: 2, name: 'Jane', surname: 'Doe', addressId: 2
+    id: 2, name: 'Jane', surname: 'Doe', addressId: 2, dateOfBirth: new Date('1966-03-08')
   }
 ];
 private listOfAddresses = [{
-  id: 1, streetName: 'Hellheim St.', streetNumber: 666, city: 'Athens', country: 'Greece'
+  id: 1, streetName: 'Hellheim St.', streetNumber: 666, city: 'Athens', pobox: '16268', country: 'Greece'
 },
 {
-  id: 2, streetName: 'Route 66', streetNumber: 1, city: 'Dallas', country: 'USA'
+  id: 2, streetName: 'Route 66', streetNumber: 1, city: 'Dallas', pobox: '38A29', country: 'USA'
 }];
 
   constructor() { }
@@ -66,11 +65,22 @@ private listOfAddresses = [{
   getAddresses() {
     return this.listOfAddresses;
   }
-  addPayment() {
+  addPayment(payment: Payment) {
+    const ind = this.listOfPayments.findIndex((lop: Payment) => {
+      return lop.id === payment.id;
+    });
+    if ( ind > -1 ) {
+      throw new Error('Payment with id' + payment.id.toString() + 'already exists');
+    } else {
+      this.listOfPayments.push(payment);
+    }
 
   }
-  updatePayment(id: number, customerId: number, paymentType: string) {
-    const flp = this.listOfPayments.filter(p => p.id === id);
+  updatePayment(id: number, payment: Payment) {
+    const ind = this.listOfPayments.findIndex((lop: Payment) => {
+      return lop.id === payment.id;
+    });
+    this.listOfPayments[ind] = payment;
   }
 
 }

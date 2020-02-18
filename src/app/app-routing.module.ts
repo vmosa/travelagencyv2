@@ -5,6 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { TasksComponent } from './tasks/tasks.component';
 import { AppComponent } from './app.component';
 import { AuthguardGuard } from './authguard.guard';
+import { TasklistComponent } from './tasks/tasklist/tasklist.component';
 
 
 const routes: Routes = [{

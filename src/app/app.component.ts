@@ -11,5 +11,6 @@ export class AppComponent {
   public urlCheck(): boolean {
     return RouterLink.prototype.routerLink !== './';
   }
+  
 
 }
