@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { LoginModule } from './login/login.module';
 import { AdminModule } from './admin/admin.module';
 import { TasksModule } from './tasks/tasks.module';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -21,8 +22,9 @@ import { TasksModule } from './tasks/tasks.module';
     AdminModule,
     TasksModule,
     ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

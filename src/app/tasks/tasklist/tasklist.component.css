@@ -1,0 +1,13 @@
+.member{
+    background-color: #EAE2A2;
+    
+}
+.member>a:hover,:link,:active,:visited{
+    text-decoration: none;
+}
+.member:hover{
+    background-color:  #EAA2A2;
+}
+ul > li {
+    list-style-type: none;
+}
